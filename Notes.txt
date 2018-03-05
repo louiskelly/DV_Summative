@@ -24,4 +24,4 @@ Prototypes and use cases should be made prior to coding.
 Dependencies must be managed, probably using grunt, could be added later in development
 
 
-LISA ADD SOME STUFF IN HERE (________)
+LISA ADD SOME STUFF IN HERE (NAH)
