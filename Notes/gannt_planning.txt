@@ -1,0 +1,78 @@
+// Create design that is simple to understand, basic user testing to confirm.
+
+//Create flow/use case diagrams for website, make these detailed.
+
+//Hold regular mettings and take notes, only 1 set of notes needed for group.
+
+//Select a framework(d3,material,etc), and justify choice with UML use case diagrams describing how it works for its purpose for different users and an admin.
+
+//Select an api(google maps, presumably.) and implement it in a way that has interactivity, include a UML for it identical to the one for frameworks.
+
+//Use NPM and grunt, have some form of automation happening via grunt.
+
+//Research and compare API's and Librarys, describe how they fit the requirements.
+
+//Define goals early in development, note how you met the.
+
+//Develop a JS best practices document for the team, include some research and make it detailed.
+
+//Use Github, and merge into a master branch only when code is up to standards.
+
+//Create a Ghannt chart and note variations on time spent on tasks.
+
+//Nag team members to do work if they are not.
+
+//Follow Yoobee best practices.
+
+
+2	basic persona, based on brief.
+3	Sketches,
+4	Wireframe,
+5	usertest(survey, if time allows) wireframe.
+
+3	Create flow UML diagrams
+3+	Create use case UML diagrams
+
+0	Hold meetings(daily?)
+0	Take notes during meeting.
+
+4	Research framework
+4+	Create framework UML diagram.
+
+3	Research API
+3+	Create API UML diagram.
+
+6	Implement npm
+6	Implement grunt
+6+	Add automation via grunt
+
+6	Decide on Library
+6+	Describe how the chosen API / library fit requirements
+
+1	Define goals for website
+1+	Note how initial goals were met.
+
+1	Create JS style guide
+1+	research js style guides
+1+	refine js style guide.
+
+0	Use github
+0	error check branch code
+0	push to master when checkpoints are reached.
+
+1	Create ghannt
+1+	note timeline changes
+
+0	communicate changes to master branch to team members
+0	nag teammembers if they are not working
+
+0	follow yoobee best practices
+
+7	Create basic HTML / CSS framework
+7	Begin Javascript
+7+	Test and debug
+
+8	Fill out write up
+8+	Create Presentation
+
+
