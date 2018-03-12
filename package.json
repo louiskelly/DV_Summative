@@ -21,7 +21,13 @@
   "homepage": "https://github.com/louiskelly/DV_Summative#readme",
   "dependencies": {
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
     "request": "^2.83.0"
   },
   "devDependencies": {
