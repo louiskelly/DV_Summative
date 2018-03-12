@@ -29,6 +29,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
+    "jquery-modal": "^0.9.1",
     "request": "^2.83.0"
   },
   "devDependencies": {
