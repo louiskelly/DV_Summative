@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/louiskelly/DV_Summative#readme",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
