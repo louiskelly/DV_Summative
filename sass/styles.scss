@@ -2,7 +2,8 @@
 $maincolor: #FFDD00;
 $darkcolor: #444444;
 $lightcolor: #fff;
-$maxWidth: 1200px;
+$greycolor: #ddd;
+$maxwidth: 1200px;
 
 body{
 	margin:0;
@@ -11,6 +12,7 @@ body{
 
 header {
 	position:absolute;
+	display:inline-flex;
 	top:0;
 	left:0;
 	z-index:100;
@@ -18,9 +20,16 @@ header {
 	background-color: rgba(0,0,0,0.2);
 }
 
+header .icon{
+	text-decoration: none;
+	color: $lightcolor;
+	font-size: 20px;
+	right:0;
+}
+
 h2{
-	font-size:50px;
-	font-weight: bold;
+	font-size: 75px;
+	font-weight: black;
 }
 
 .headA img{
@@ -40,6 +49,7 @@ h2{
 	background-size: cover;
 	color: $lightcolor;
 	text-shadow: 1px 2px 3px black;
+	text-align: center;
 }
 
 .conA h1{
@@ -61,11 +71,15 @@ h2{
 }
 
 .conA a{
+	color: $greycolor;
 	display:inline-block;
+	font-size:50px;
+	text-decoration:none;
 }
 
 .conA a:hover{
-	background-color: $maincolor;
+	color: $maincolor;
+	transition: 1s ease;
 }
 
 // CONTAINER B CSS 
@@ -79,7 +93,7 @@ h2{
 	padding-top:80px;
 	padding-bottom:20px;
 	text-align: center;
-	max-width: 1200px;
+	max-width: $maxwidth;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -101,7 +115,7 @@ h2{
 	padding-top:80px;
 	padding-bottom:20px;
 	text-align: center;
-	max-width: 1200px;
+	max-width: $maxwidth;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -112,23 +126,39 @@ h2{
 
 .conD {
 	height:100vh;
-	background-color: $lightcolor;	
+	background-color: $greycolor;	
 }
 
 .conD .container{
 	padding-top:80px;
 	padding-bottom:20px;
 	text-align: center;
-	max-width: 1200px;
+	max-width: $maxwidth;
 	margin-left:auto;
 	margin-right:auto;
 }
 
-.conD .container .recommendation{
-	height:80vh;
-	width:100%;
-	background-color:red;
+// ICON CSS 
+
+.conD .icon {
+	display:inline-block;
+	margin-bottom: 20px;
+	font-size:40px;
+	width:2em;
+	line-height:2em;
+	border-radius: 50%;
+	text-align:center;
+	background-color: $darkcolor;
+	color: $lightcolor;
+	text-decoration: none;
 }
+
+.conD .icon:hover {
+	background-color: $darkcolor;
+	color: $maincolor;
+	transition: 0.5s ease;
+}
+
 
 footer{
 	border-top: 10px solid $maincolor;
