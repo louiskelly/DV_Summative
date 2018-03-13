@@ -3,6 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../node_modules/jquery-modal/jquery.modal.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.min.css">
 	<meta charset="UTF-8">
@@ -69,8 +70,39 @@
 
 <footer>
 	<p>Created by Lisa Pearson and Louis Kelly 2018</p>
+	<a href="#map-modal" rel="modal:open">OPEN MODAL</a>
 </footer>
 
+<!--MODAL MAP CONTAINER-->
+<!--Louis-->
+	<section class = "conModal">
+		<div id="map-modal" class = "container modal">
+			<div id="map"></div>
+			<div id="sidebar" class="flip-container">
+				<div class="flipper">
+					<div class="front">
+						<input type="text" id="mapSearch">
+						<hr>
+						<a href = "#" class="fa fa-bed icon"></a>
+		                <a href = "#" class="fa fa-camera icon"></a>
+		                <a href = "#" class="fa fa-bus icon"></a>
+		                <a href = "#" class="fa fa-cutlery icon"></a>
+		                <button class="testBtn">da</button>
+						<hr>
+
+					</div>
+					<div class="back">
+						<button class="testBtn">da</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--END OF MODAL CONTAINER-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/jquery-modal/jquery.modal.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU&callback=initMap"></script>
 <script type="text/javascript" src="js/scripts.min.js"></script>
 </body>
 </html>
