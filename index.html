@@ -3,6 +3,8 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick-theme.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.min.css">
 	<meta charset="UTF-8">
@@ -12,11 +14,17 @@
 
 <!-- HEADER -->
 
-<header>
+<header class = "head-fixed">
 	<div class = "container">
 		<a href = "#" class = "headA"><img src = "img/logo-white.png"></a>
 	</div>
-	<a href = "" class = "fa fa-map icon">Map</a>
+<nav class = "headB">
+	<ul>
+		<li><a class = "fa fa-globe icon"></a></li>
+		<li><a class = "fa fa-map-marker icon"></a></li>
+	</ul>
+</nav>
+
 </header>
 
 <!-- MAIN CONTENT -->
@@ -50,6 +58,53 @@
 	<section class = "conC">
 		<div class = "container">
 			<h2>See what's on.</h2>
+
+
+				<div class="slider">
+
+				<div>
+
+				  	<img src = "img/slide001.jpg" alt = "The Jim Henson Retrospectacle">
+				  	
+				  	<div class = "text">
+				  	<p>The Jim Henson Retrospectacle
+					Michael Fowler Centre, 111 Wakefield St, Wellington
+					Friday 27 April 2018 2:00pm – 3:30pm</p>
+					</div>
+
+				</div>
+
+
+				<div>
+					
+				  	<img src = "img/slide002.jpg" alt = "John Coopoer Clarke">
+				  	
+				  	<div class = "text">
+				  	<p>John Cooper Clarke
+					St Peter's on Willis, 211 Willis St, Te Aro, Wellington
+					Monday 23 April 2018 8:00pm</p>
+
+					</div>
+
+				</div>
+
+
+				<div>
+					
+				  	<img src = "img/slide003.jpg" alt = "Pop-up Globe Season 3">
+				  	
+				  	<div class = "text">
+				  	<p>Pop-up Globe Season 3</p>
+					</div>
+
+				</div>
+
+
+
+
+
+				</div>
+
 		</div>
 	</section>
 
@@ -58,22 +113,39 @@
 	<section class = "conD">
 		<div class = "container">
 			<h2>Plan your visit.</h2>
+
+			<div class = "recommendation">
+				
+				<div class = "iconset">
 				<a href = "#" class="fa fa-bed icon"></a>
 				<a href = "#" class="fa fa-camera icon"></a>
 				<a href = "#" class="fa fa-bus icon"></a>
 				<a href = "#" class="fa fa-cutlery icon"></a>
+				</div>
+
+			<div class = "info"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex perferendis quis nesciunt necessitatibus neque officiis, maxime tenetur, harum libero aspernatur tempora incidunt veritatis debitis eligendi, placeat quasi laborum repellat eveniet? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex perferendis quis nesciunt necessitatibus neque officiis, maxime tenetur, harum libero aspernatur tempora incidunt veritatis debitis eligendi, placeat quasi laborum repellat eveniet?</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex perferendis quis nesciunt necessitatibus neque officiis, maxime tenetur, harum libero aspernatur tempora incidunt veritatis debitis eligendi, placeat quasi laborum repellat eveniet? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex perferendis quis nesciunt necessitatibus neque officiis, maxime tenetur, harum libero aspernatur tempora incidunt veritatis debitis eligendi, placeat quasi laborum repellat eveniet?</p>
+			</div>
+			</div>
+			
+			<h2>...or start exploring!</h2>
+			<p>view map</p>	
 		</div>
 	</section>
+
 </main>	
 
 <!-- FOOTER -->
 
 <footer>
-	<p>Created by Lisa Pearson and Louis Kelly 2018</p>
+	<p>Created by Lisa Pearson and Louis Kelly 2018. For education purposes only.</p>
 </footer>
 
 <!--SCRIPTS-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- SLICK SLIDER JS -->
+<script src= "../node_modules/slick-carousel/slick/slick.min.js"></script>
 <!-- CUSTOM SCRIPT -->
 <script type="text/javascript" src="js/scripts.min.js"></script>
 </body>

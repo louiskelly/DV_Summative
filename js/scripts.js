@@ -4,3 +4,17 @@ $("#scrollbutton").click(function() {
         scrollTop: $(".conB").offset().top},
         'slow');
 });
+
+
+//slick slider for conC
+
+$('.slider').slick({
+	dots: true,
+	infinite: true,
+	speed: 500,
+	fade: true,
+	cssEase: 'linear',
+	centerMode: true,
+	autoplay: true,
+	autoplaySpeed: 4000,
+});

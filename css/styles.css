@@ -1,6 +1,12 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  font-size: 75px;
+  font-weight: black;
 }
 
 header {
@@ -13,16 +19,45 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-header .icon {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-  right: 0;
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-right: auto;
 }
 
-h2 {
-  font-size: 75px;
-  font-weight: black;
+.headA {
+  display: inline-block;
+}
+
+.headB ul {
+  display: flex;
+  margin: 10px;
+  list-style: none;
+}
+
+.headB .icon {
+  margin-right: 10px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.headB .icon:hover {
+  opacity: 1.0;
+  color: #FFDD00;
+  transition: 0.5s ease;
+}
+
+.head-fixed {
+  position: fixed;
 }
 
 .headA img {
@@ -64,8 +99,9 @@ h2 {
 .conA a {
   color: #ddd;
   display: inline-block;
-  font-size: 50px;
+  font-size: 70px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .conA a:hover {
@@ -74,7 +110,7 @@ h2 {
 }
 
 .conB {
-  height: 100vh;
+  height: 80vh;
   background-color: #FFDD00;
 }
 
@@ -112,8 +148,17 @@ h2 {
   color: #FFDD00;
 }
 
+.slider img {
+  margin: 0 auto;
+  display: block;
+}
+
+.slider .slick-dots li button:before {
+  color: #FFDD00;
+}
+
 .conD {
-  height: 100vh;
+  height: auto;
   background-color: #ddd;
 }
 
@@ -145,7 +190,23 @@ h2 {
   transition: 0.5s ease;
 }
 
+.conD .info {
+  line-height: 1.8;
+  height: auto;
+  margin: 20px;
+}
+
+.recommendation {
+  padding-top: 20px;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 2px 5px #999999;
+  border-radius: 2px;
+}
+
 footer {
+  position: relative;
   border-top: 10px solid #FFDD00;
   height: 100px;
   width: 100%;

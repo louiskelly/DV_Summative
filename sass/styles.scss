@@ -5,10 +5,21 @@ $lightcolor: #fff;
 $greycolor: #ddd;
 $maxwidth: 1200px;
 
+
+//GENERAL CSS 
+
 body{
 	margin:0;
+	padding:0;
 	font-family: 'Raleway', sans-serif;
 }
+
+h2{
+	font-size: 75px;
+	font-weight: black;
+}
+
+//HEADER (NAVBAR) CSS 
 
 header {
 	position:absolute;
@@ -20,16 +31,45 @@ header {
 	background-color: rgba(0,0,0,0.2);
 }
 
-header .icon{
-	text-decoration: none;
-	color: $lightcolor;
-	font-size: 20px;
-	right:0;
+header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: $maxwidth;
+	margin-right: auto;
 }
 
-h2{
-	font-size: 75px;
-	font-weight: black;
+.headA{
+	display:inline-block;
+}
+
+.headB ul{
+	display:flex;
+	margin:10px;
+	list-style:none;
+}
+
+.headB .icon{
+	margin-right:10px;
+	padding:0;
+	border:none;
+	outline:none;
+	background:none;
+	text-decoration:none;
+	font-size: 28px;
+	color: $lightcolor;
+	cursor:pointer;
+	opacity:0.8;
+}
+
+.headB .icon:hover{
+	opacity:1.0;
+	color: $maincolor;
+	transition: 0.5s ease;
+}
+
+.head-fixed {
+	position:fixed;
 }
 
 .headA img{
@@ -73,8 +113,9 @@ h2{
 .conA a{
 	color: $greycolor;
 	display:inline-block;
-	font-size:50px;
+	font-size:70px;
 	text-decoration:none;
+	cursor:pointer;
 }
 
 .conA a:hover{
@@ -85,7 +126,7 @@ h2{
 // CONTAINER B CSS 
 
 .conB{
-	height:100vh;
+	height:80vh;
 	background-color: $maincolor;	
 }
 
@@ -106,6 +147,8 @@ h2{
 	line-height:1.8;
 }
 
+// CONTAINER C CSS
+
 .conC {
 	height:100vh;
 	background-color: $darkcolor;	
@@ -124,8 +167,21 @@ h2{
 	color: $maincolor;
 }
 
+
+// CONTAINER C SLIDER CSS 
+.slider img{
+	margin:0 auto;
+	display:block;
+}
+
+.slider .slick-dots li button:before {
+    color: $maincolor;
+  }
+
+ // CONTAINER D 
+
 .conD {
-	height:100vh;
+	height:auto;
 	background-color: $greycolor;	
 }
 
@@ -138,7 +194,7 @@ h2{
 	margin-right:auto;
 }
 
-// ICON CSS 
+// CONTAINER D ICON CSS 
 
 .conD .icon {
 	display:inline-block;
@@ -159,8 +215,25 @@ h2{
 	transition: 0.5s ease;
 }
 
+.conD .info {
+	line-height:1.8;
+	height:auto;
+	margin:20px;
+}
+//CONTAINER D RECOMMENDATION DIV CSS
+
+.recommendation {
+	padding-top:20px;
+	height: 500px;
+	width:100%;
+	background-color: white;
+	box-shadow: 1px 2px 5px #999999;
+	border-radius: 2px;
+}
+
 
 footer{
+	 position:relative;
 	border-top: 10px solid $maincolor;
 	height:100px;
 	width:100%;
