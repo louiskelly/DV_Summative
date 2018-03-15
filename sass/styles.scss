@@ -84,7 +84,7 @@ header .container {
 	justify-content: center;
 	height:100vh;
 	min-height:450px;
-	background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.3)), url("../img/header.jpg");
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url("../img/header.jpg");
 	background-position: center;
 	background-size: cover;
 	color: $lightcolor;
@@ -126,12 +126,12 @@ header .container {
 // CONTAINER B CSS 
 
 .conB{
-	height:80vh;
+	height:70vh;
 	background-color: $maincolor;	
 }
 
 .conB .container{
-	padding-top:80px;
+	padding-top:30px;
 	padding-bottom:20px;
 	text-align: center;
 	max-width: $maxwidth;
@@ -150,12 +150,12 @@ header .container {
 // CONTAINER C CSS
 
 .conC {
-	height:100vh;
+	height:auto;
 	background-color: $darkcolor;	
 }
 
 .conC .container{
-	padding-top:80px;
+	padding-top:30px;
 	padding-bottom:20px;
 	text-align: center;
 	max-width: $maxwidth;
@@ -169,13 +169,30 @@ header .container {
 
 
 // CONTAINER C SLIDER CSS 
+
+.slider {
+	width: $maxwidth;
+}
 .slider img{
+	width: $maxwidth;
 	margin:0 auto;
 	display:block;
 }
 
 .slider .slick-dots li button:before {
     color: $maincolor;
+  }
+
+  .conC .text{
+  	background-color: rgba(0,0,0,0.5);
+  	width:$maxwidth;
+  	padding:20px;
+  	text-align: center;
+  	border-top: 3px solid $maincolor;
+  	color:white;
+  	font-size:20px;
+  	position:relative;
+  	z-index:1;
   }
 
  // CONTAINER D 
@@ -186,12 +203,12 @@ header .container {
 }
 
 .conD .container{
-	padding-top:80px;
-	padding-bottom:20px;
+	padding-top: 30px;
+	padding-bottom: 20px;
 	text-align: center;
 	max-width: $maxwidth;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // CONTAINER D ICON CSS 
@@ -231,6 +248,32 @@ header .container {
 	border-radius: 2px;
 }
 
+.conD .viewmap {
+	background-color: $darkcolor;
+	color: $maincolor;
+	padding: 5px 5px;
+	border:none;
+	border-radius: 3px;
+	box-shadow:1px 2px 3px $darkcolor;
+	font-size: 20px;
+	font-weight:bold;
+	padding: 15px 25px;
+	cursor:pointer;
+	margin-bottom:30px;
+}
+
+
+.conD .viewmap:hover{
+	background-color: $maincolor;
+	color: $darkcolor;
+	transition: 0.5s ease;
+}
+
+.conD .underline {
+	background: none;
+	text-decoration: underline;
+    text-decoration-color: $maincolor;
+}
 
 footer{
 	 position:relative;
@@ -238,5 +281,13 @@ footer{
 	height:100px;
 	width:100%;
 	background-color: $darkcolor;
+}
 
+footer p{
+	max-width: $maxwidth;
+	margin-left: auto;
+	margin-right:auto;
+	font-size:12px;
+	color:white;
+	text-align: center;
 }
