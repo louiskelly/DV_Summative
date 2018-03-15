@@ -160,10 +160,15 @@ footer{
 	left: 40px;
 	height: 90%;
 	width: 260px;
-	background-color: red;
+	background-color: $darkcolor;
 	z-index: 999;
 	overflow-y: scroll;
 	overflow-x: hidden;
+}
+
+.nomarpad{
+	margin: 0;
+	padding: 0;
 }
 
 /*MAP ICONS -Louis*/
@@ -180,6 +185,23 @@ footer{
     text-decoration: none;
 }
 
+.back-title-style{
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0px;
+}
+
+.back-rating-style{
+	font-size: 20px;
+	font-weight: regular;
+	margin: 0px;
+}
+
+.back-address-style{
+	font-size: 20px;
+	font-weight: regular;
+	margin: 0px;
+}
 /*FlIP CODE -Louis*/
 .flip-container {
 	perspective: 260px;
@@ -216,4 +238,5 @@ footer{
 
 .back {
 	transform: rotateY(180deg);
+	background-color: red;
 }

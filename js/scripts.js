@@ -10,6 +10,12 @@ var map;
 var service;
 var infowindow;
 
+var gmarkers = [];
+var arrayAll = ['restaurant','lodging','point_of_interest'];
+var arrayRestaurant = ['restaurant'];
+var arrayLodging = ['lodging'];
+var arrayInterest = ['point_of_interest'];
+
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
 
@@ -21,13 +27,45 @@ function initMap() {
   var request = {
     location: wellington,
     radius: '2000',
-    type: ['restaurant']
+    type: ['restaurant','lodging','point_of_interest']
   };
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
 
+  function setMapOnAll(map) {
+        for (var i = 0; i < gmarkers.length; i++) {
+          gmarkers[i].setMap(map);
+        }
+      }
+  function clearMarkers() {
+        setMapOnAll(null);
+      }
+  function deleteMarkers() {
+        clearMarkers();
+        gmarkers = [];
+      }
 
+
+    function filterMarkerType(){
+    deleteMarkers();
+    service.nearbySearch(request, callback);
+  }
+
+  $('.mapBtn_Lodging').click(function(){
+    request.type = arrayLodging;
+    filterMarkerType();
+  });
+
+  $('.mapBtn_Restaurant').click(function(){
+    request.type = arrayRestaurant;
+    filterMarkerType();
+  });
+
+  $('.mapBtn_Interest').click(function(){
+    request.type = arrayInterest;
+    filterMarkerType();
+  });
 }
 
 function callback(results, status) {
@@ -49,19 +87,35 @@ function createMarker(place) {
         backTitle: place.name,
         backRating: place.rating,
         backAddress: place.vicinity,
-        SideTester: place
+        SideTester: place,
+        category: place.types
     });
 
+    gmarkers.push(marker);
 
 	google.maps.event.addListener(marker, 'click', function() {
 		console.log($(this)[0]);
-		console.log($(this)[0].SideTester);
+		console.log($(this)[0].category);
 		$('#back_title').text($(this)[0].backTitle);
 		$('#back_rating').text($(this)[0].backRating);
 		$('#back_address').text($(this)[0].backAddress);
 		flipFunc();
 	});
 }
+
+// filterMarkers = function (category) {
+//     for (i = 0; i < gmarkers.length; i++) {
+//         marker1 = gmarkers[i];
+//         // If is same category or category not picked
+//         if (marker1 == category[i] || category.length === 0) {
+//             marker1.setVisible(true);
+//         }
+//         // Categories don't match 
+//         else {
+//             marker1.setVisible(false);
+//         }
+//     }
+// };
 
 
 //END OF MAP
