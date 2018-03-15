@@ -17,4 +17,5 @@ $('.slider').slick({
 	centerMode: true,
 	autoplay: true,
 	autoplaySpeed: 4000,
+
 });

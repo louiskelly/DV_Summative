@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick.css">
 	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick-theme.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+	<link rel="stylesheet" href="../node_modules/jquery-modal/jquery.modal.css">
 	<link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
@@ -161,6 +162,7 @@
 <!-- FOOTER -->
 
 <footer>
+<<<<<<< HEAD
 	<p>Created by Lisa Pearson and Louis Kelly 2018. For education purposes only.</p>
 </footer>
 
@@ -169,6 +171,47 @@
 <!-- SLICK SLIDER JS -->
 <script src= "../node_modules/slick-carousel/slick/slick.min.js"></script>
 <!-- CUSTOM SCRIPT -->
+=======
+	<p>Created by Lisa Pearson and Louis Kelly 2018</p>
+	<a href="#map-modal" rel="modal:open">OPEN MODAL</a>
+</footer>
+
+<!--MODAL MAP CONTAINER-->
+<!--Louis-->
+	<section class = "conModal">
+		<div id="map-modal" class = "container modal">
+			<div id="map"></div>
+			<div id="sidebar" class="flip-container">
+				<div class="flipper">
+					<div class="front">
+						<input type="text" id="mapSearch">
+						<hr>
+						<a href = "#" class="mapBtn_Lodging fa fa-bed icon"></a>
+		                <a href = "#" class="mapBtn_Interest fa fa-camera icon"></a>
+		                <a href = "#" class="fa fa-bus icon"></a>
+		                <a href = "#" class="mapBtn_Restaurant fa fa-cutlery icon"></a>
+		                <button class="testBtn">da</button>
+		                <h1 class="test">DA</h1>
+						<hr>
+
+					</div>
+					<div class="back">
+						<div class="back-bg-style">
+						<p class="nomarpad back-title-style"><span id="back_title">1</span></p>
+						<p class="nomarpad back-rating-style"> Rating: <span id="back_rating">2</span></p>
+						<p class="nomarpad back-address-style"> Address: <span id="back_address">3</span></p>
+						</div
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--END OF MODAL CONTAINER-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/jquery-modal/jquery.modal.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU&libraries=places&callback=initMap"></script>
+>>>>>>> d7e0aa37a049df95c19b832ecee00378d5c2f654
 <script type="text/javascript" src="js/scripts.min.js"></script>
 </body>
 </html>
