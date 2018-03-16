@@ -1,3 +1,94 @@
-// 8 examples of each catergory
+//place name
+//address
+//rating
+//
 
-//QUEST ATRIUM
+
+//ACCOMMODATION
+
+[
+{
+"name":"The Cambridge Hotel",
+"address":"28 Cambridge Terrace, Te Aro, Wellington 6011",
+"rating": "3.8",
+"lat": -41.2951, 
+"lng": 174.7829
+},
+
+{
+"name":"Green Gables Motel",
+"address":"560 High St, Lower Hutt 5010",
+"rating": "4.0",
+"lat": -41.2038, 
+"lng": 174.9171
+},
+
+{
+"name":"Bolton Hotel",
+"address":"12 Bolton St, Wellington, 6011",
+"rating": "5.0",
+"lat": -41.2794, 
+"lng": 174.7747
+},
+
+{
+"name":"Shepherds Arms Hotel",
+"address":"285 Tinakori Rd, Thorndon, 6011",
+"rating": "3.8",
+"lat": -41.2783, 
+"lng": 174.7700
+},
+
+{
+"name":"Distinction Wellington Century City Hotel",
+"address":"70 Tory St, Te Aro, Wellington 6011",
+"rating": "4.5",
+"lat": -41.2947, 
+"lng": 174.7803
+},
+
+{
+"name":"Gourmet Stay",
+"address":"25 Frederick St, Te Aro, Wellington 6011",
+"rating": "4.8",
+"lat": -41.2965, 
+"lng": 174.7779
+},
+
+//Hotspot
+
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// },
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// },
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// },
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// },
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// },
+// {
+// "name":"",
+// "address":"",
+// "rating": "",
+// }
+
+
+
+
+] // END OF JSON DATA
