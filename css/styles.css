@@ -67,7 +67,7 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("../img/header.jpg");
   background-position: center;
   background-size: cover;
-  color: white;
+  color: #fff;
   text-shadow: 1px 2px 3px black;
   text-align: center;
 }
@@ -75,9 +75,8 @@ header {
 .conA h1 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #ffdd00;
-  font-size: 115px;
-  margin-left: 0.2em;
+  color: #FFDD00;
+  font-size: 15vw;
 }
 
 .conA p {
@@ -142,7 +141,7 @@ header {
 }
 
 .conC h2 {
-  color: #ffdd00;
+  color: #FFDD00;
 }
 
 .slider img {
@@ -167,8 +166,8 @@ header {
 }
 
 .conD {
-  height: 100vh;
-  background-color: white;
+  height: auto;
+  background-color: #ddd;
 }
 
 .conD .container {
@@ -256,6 +255,45 @@ header {
   font-size: 14px;
 }
 
+footer {
+  position: relative;
+  border-top: 10px solid #FFDD00;
+  height: 100px;
+  width: 100%;
+  background-color: #444444;
+}
+
+footer p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .conA h1 {
+    font-size: 115px;
+  }
+
+  .conA p {
+    font-size: 24px;
+  }
+
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .headB ul {
+    display: flex;
+  }
+}
 #map-modal {
   max-width: 95%;
   width: 95%;
@@ -297,7 +335,7 @@ header {
   border-radius: 50%;
   text-align: center;
   background-color: #444444;
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -355,3 +393,5 @@ header {
   transform: rotateY(180deg);
   background-color: red;
 }
+
+/*# sourceMappingURL=styles.css.map */
