@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick-theme.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="../node_modules/jquery-modal/jquery.modal.css">
-	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
 
@@ -171,9 +171,9 @@
 	<section class = "conModal">
 		<div id="map-modal" class = "container modal">
 			<div id="map"></div>
-			<div id="sidebar" class="flip-container">
-				<div class="flipper">
-					<div class="front">
+			<div id="sidebar" class="card js-card">
+				<div class="card__wrapper">
+					<div class="card__side is-active">
 						<input type="text" id="mapSearch">
 						<hr>
 						<a href = "#" class="mapBtn_Lodging fa fa-bed icon"></a>
@@ -185,10 +185,10 @@
 						<hr>
 
 					</div>
-					<div class="back">
-						<div class="back-bg-style">
+					<div class="card__side card__side--back">
+						<img class="nomarpad back-image-style" id="back_img" src="#">
 						<p class="nomarpad back-title-style"><span id="back_title">1</span></p>
-						<p class="nomarpad back-rating-style"> Rating: <span id="back_rating">2</span></p>
+						<p class="nomarpad back-rating-style"> Rating: <span class="stars" id="back_rating">2</span></p>
 						<p class="nomarpad back-address-style"> Address: <span id="back_address">3</span></p>
 						</div
 

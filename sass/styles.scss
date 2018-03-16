@@ -359,7 +359,6 @@ footer p{
 	left: 40px;
 	height: 90%;
 	width: 260px;
-	background-color: $darkcolor;
 	z-index: 999;
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -371,7 +370,7 @@ footer p{
 }
 
 /*MAP ICONS -Louis*/
-.front .icon{
+#sidebar .icon{
 	display:inline-block;
     margin-bottom: 20px;
     font-size:24px;
@@ -382,6 +381,11 @@ footer p{
     background-color: $darkcolor;
     color: $lightcolor;
     text-decoration: none;
+}
+
+.back-image-style{
+	width: 245px;
+	height: 180px;
 }
 
 .back-title-style{
@@ -402,40 +406,77 @@ footer p{
 	margin: 0px;
 }
 /*FlIP CODE -Louis*/
-.flip-container {
-	perspective: 260px;
+$cardheight: 620px;
+$card-transition-time: 0.5s;
+.card {
+   perspective: 600px;
+   position: relative;
+   
+   &.is-switched {
+      .card__wrapper {
+         animation: rotate $card-transition-time linear both;
+      }
+   }
 }
 
-.flip-container.hover .flipper, .flip-container.flip .flipper {
-	transform: rotateY(180deg);
+   .card__wrapper {
+      transform-style: preserve-3d;
+      animation: rotate-inverse $card-transition-time linear both;
+   }
+
+   .card__side {
+      backface-visibility: hidden;
+      background-color: $darkcolor;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $cardheight;
+
+      &.is-active {
+         position: static;
+      }
+   }
+
+   .card__side--back {
+      transform: rotateY(180deg);
+      background-color: $lightcolor;
+      width: 100%;
+      height: $cardheight;
+   }
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0);
+  }
+  70% {
+    transform: rotateY(200deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
 }
 
-.flip-container, .front, .back {
-	width: 100%;
-	height: 100%;
+@keyframes rotate-inverse {
+  0% {
+    transform: rotateY(180deg);
+  }
+  70% {
+    transform: rotateY(-20deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
 }
 
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
+//Star code
+span.stars, span.stars span {
+    display: block;
+    background: url(../img/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
 }
 
-.front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.front {
-	z-index: 2;
-	transform: rotateY(0deg);
-}
-
-.back {
-	transform: rotateY(180deg);
-	background-color: red;
+span.stars span {
+    background-position: 0 0;
 }

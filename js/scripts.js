@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 //HOME PAGE JS (Lisa)
 $("#scrollbutton").click(function() {
     $('html,body').animate({
@@ -53,6 +55,8 @@ function initMap() {
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+  // service.getDetails({placeId: placeidVar}, function(place) {console.log(place);
+  // });
 
   function setMapOnAll(map) {
         for (var i = 0; i < gmarkers.length; i++) {
@@ -100,6 +104,12 @@ function callback(results, status) {
 }
 
 function createMarker(place) {
+    var detailmake = service.getDetails({placeId: place.place_id}, function(place2){
+      console.log(place2);
+      // var details = {
+      //   detail_description: place2.description;
+      // }
+    });
 
     var marker = new google.maps.Marker({
         position: place.geometry.location,
@@ -109,7 +119,8 @@ function createMarker(place) {
         backRating: place.rating,
         backAddress: place.vicinity,
         SideTester: place,
-        category: place.types
+        category: place.types,
+        backImage: place.photos.reference
     });
 
     gmarkers.push(marker);
@@ -117,34 +128,50 @@ function createMarker(place) {
   google.maps.event.addListener(marker, 'click', function() {
     console.log($(this)[0]);
     console.log($(this)[0].category);
+    $('#back_img').attr('src','https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+ $(this).backImage +'&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
     $('#back_title').text($(this)[0].backTitle);
+    //Gather Rating number, converts to stars
     $('#back_rating').text($(this)[0].backRating);
+    $('span.stars').stars();
+    //
     $('#back_address').text($(this)[0].backAddress);
-    flipFunc();
+    flipCard();
   });
 }
 
-// filterMarkers = function (category) {
-//     for (i = 0; i < gmarkers.length; i++) {
-//         marker1 = gmarkers[i];
-//         // If is same category or category not picked
-//         if (marker1 == category[i] || category.length === 0) {
-//             marker1.setVisible(true);
-//         }
-//         // Categories don't match 
-//         else {
-//             marker1.setVisible(false);
-//         }
-//     }
-// };
 
+//Flip Function
 
-//END OF MAP
+var cardTransitionTime = 500;
 
-function flipFunc(){
-  $( ".flip-container" ).toggleClass( "flip" );
+var $card = $('.js-card');
+var switching = false;
+
+$('#testBtn').click(flipCard);
+
+function flipCard () {
+   if (switching) {
+      return false;
+   }
+   switching = true;
+   
+   $card.toggleClass('is-switched');
+   window.setTimeout(function () {
+      $card.children().children().toggleClass('is-active');
+      switching = false;
+   }, cardTransitionTime / 2);
 }
 
-$('.testBtn').click(function(){
-  flipFunc();
-});
+//Star Function
+$.fn.stars = function() {
+    return $(this).each(function() {
+        // Get the value
+        var val = parseFloat($(this).html());
+        // Make sure that the value is in 0 - 5 range, multiply to get width
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        // Create stars holder
+        var $span = $('<span />').width(size);
+        // Replace the numerical value with stars
+        $(this).html($span);
+    });
+};
