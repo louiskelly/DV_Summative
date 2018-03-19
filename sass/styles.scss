@@ -14,7 +14,8 @@ body{
 	font-family: 'Raleway', sans-serif;
 }
 
-h2{
+h2{	
+	margin-top:20px;
 	font-size: 75px;
 	font-weight: black;
 }
@@ -49,8 +50,9 @@ header {
 	list-style:none;
 }
 
-.headB a{
+.headB button{
 	display:block;
+	position: relative;
 	margin-right:10px;
 	padding:0;
 	border:none;
@@ -62,7 +64,7 @@ header {
 	cursor:pointer;
 }
 
-.headB a:hover{
+.headB button:hover{
 	color: $maincolor;
 	transition: 0.5s ease;
 }
@@ -125,7 +127,7 @@ header {
 // CONTAINER B CSS 
 
 .conB{
-	height:70vh;
+	height: 80vh;
 	background-color: $maincolor;	
 }
 
@@ -206,6 +208,13 @@ header {
 	margin-right: auto;
 }
 
+.iconcontainer{
+		max-width:1200px;
+		margin-left:auto;
+		margin-right:auto;
+}
+
+
 // CONTAINER D ICON CSS 
 
 .conD .icon {
@@ -217,7 +226,7 @@ header {
 	border-radius: 50%;
 	text-align:center;
 	background-color: $darkcolor;
-	color: $lightcolor;
+	color: $greycolor;
 	text-decoration: none;
 }
 
@@ -227,20 +236,46 @@ header {
 	transition: 0.5s ease;
 }
 
-.conD .info {
-	line-height:1.8;
-	height:auto;
-	margin:20px;
+.conD .icon:focus{
+	color: white;
 }
-//CONTAINER D RECOMMENDATION DIV CSS
 
-.recommendation {
-	padding-top:20px;
-	height: 500px;
-	width:100%;
-	background-color: white;
-	box-shadow: 1px 2px 5px #999999;
-	border-radius: 2px;
+article {
+	background-color:white;
+	flex: 1 1 384px;
+	display:flex;
+
+}
+
+article h2{
+	font-size:18px;
+}
+
+article a{
+	flex:1;
+	display:flex;
+	margin:10px;
+	border: solid 1px $greycolor;
+	box-shadow: 1px 2px $greycolor;
+	text-decoration:none;
+}
+
+article a:hover{
+	transition: 0.5s ease;
+	opacity:0.8;
+}
+
+article .photo{
+	flex:2;
+	min-height:0;
+	background-position: center;
+	background-size:cover;
+}
+
+article .text{
+	text-align:left;
+	margin:10px;
+	flex:3;
 }
 
 .conD .viewmap {
@@ -268,23 +303,6 @@ header {
 	background: none;
 	text-decoration: underline;
     text-decoration-color: $maincolor;
-}
-
-
-.conD .iconcontainer{
-		display:flex;
-}
-
-.conD .text{
-	border: solid 1px $greycolor;
-	flex:1;
-	padding:10px;
-	text-align: center;
-}
-
-.conD .text h3{
-	margin:0;
-	font-size:14px;
 }
 
 

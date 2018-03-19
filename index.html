@@ -22,7 +22,7 @@
 
 		<nav class = "headB">
 		<ul>
-			<li><a class = "fa fa-map-marker icon"></a></li>
+			<li><button class = "fa fa-map icon" id = "mapbutton"></button></li>
 		</ul>
 		</nav>
 
@@ -112,43 +112,184 @@
 
 	<!-- CONTAINER D(RECOMMENDATIONS) -->
 
-	<section class = "conD">
+<section class = "conD">
+
 		<div class = "container">
 			<h2>Plan your visit.</h2>
-
-			<div class = "recommendation">
 				
 				<div class = "iconcontainer">
-
-				<div class = "text">
-				<a href = "#" class="fa fa-bed icon"></a>
-				<p>Accommodation</p>
-				</div>
-
-				<div class = "text">
-				<a href = "#" class="fa fa-camera icon"></a>
-				<p>Tour Guide</p>
-				</div>
-
-				<div class = "text">
-				<a href = "#" class="fa fa-cutlery icon"></a>
-				<p>Restaurants</p>
-				</div>
+				
+				<button class="fa fa-bed icon" onclick="openTab('Accommodation')"></button>
+				<button class="fa fa-camera icon" onclick="openTab('hotspot')"></button>				
+				<button class="fa fa-cutlery icon" onclick="openTab('restaurant')"></button>
 				
 				</div>
 
 
-				<div class = "recommendcontainer">
-					
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis non deserunt quod voluptatum obcaecati dicta aperiam exercitationem omnis explicabo pariatur, sint a placeat voluptas praesentium atque, dolorum esse animi. Natus.</p>
+					<div id="Accommodation" class="tab">
+					<article>
+						<a href ="#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Rydges Wellington Hotel</h2>
+						<p>75 Featherston St, Pipitea, Wellington 6011</p>
+						</div>
+					</a>
+					</article>
 
-				</div>
+					<article>
+					<a href ="#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Travelodge Hotel Wellington</h2>
+						<p> 2-6 Gilmer Terrace, Wellington</p>							
+						</div>
+					</a>
+					</article>
+
+					<article>
+					<a href = "#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Terrace Villas Serviced Apartments</h2>
+						<p>202 The Terrace, Wellington</p>							
+						</div>
+					</a>
+					</article>
 
 
-			
+					<article>
+						<a href ="#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Trek Global Backpackers</h2>
+						<p>9 O'Reily Avenue, Te Aro, Wellington</p>									
+						</div>
+					</a>
+					</article>
 
-			</div>
+					<article>
+						<a href = "#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Halswell Lodge</h2>
+						<p>21 Kent Terrace, Mount Victoria, Wellington</p>									
+						</div>							
+						</a>
+					</article>
 
+					<article>
+						<a href = "#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text"><p>Test 6</p></div>
+					</a>
+					</article>
+
+					</div>
+
+
+					<!-- CONTENT -->
+
+
+
+					<div id="hotspot" class="tab" style="display:none">
+<article>
+						<a href ="#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Test3</h2>
+						<p>Address: 75 Featherston St, Pipitea, Wellington 6011</p>
+						</div>
+					</a>
+					</article>
+
+					<article>
+					<a href ="#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 2</p></div>
+					</a>
+					</article>
+
+					<article>
+					<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 3</p></div>
+					</a>
+					</article>
+
+
+					<article>
+						<a href ="#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 4</p></div>
+					</a>
+					</article>
+
+					<article>
+						<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 5</p></div>
+						</a>
+					</article>
+
+					<article>
+						<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 6</p></div>
+					</a>
+					</article>
+
+					</div>
+
+
+					<div id="restaurant" class="tab" style="display:none">
+<article>
+						<a href ="#">
+						<div class = "photo" style = "background-image: url(img/placeholder.png);"></div>
+						<div class = "text">
+						<h2>Test2</h2>
+						<p>Address: 75 Featherston St, Pipitea, Wellington 6011</p>
+						</div>
+					</a>
+					</article>
+
+					<article>
+					<a href ="#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 2</p></div>
+					</a>
+					</article>
+
+					<article>
+					<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 3</p></div>
+					</a>
+					</article>
+
+
+					<article>
+						<a href ="#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 4</p></div>
+					</a>
+					</article>
+
+					<article>
+						<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 5</p></div>
+						</a>
+					</article>
+
+					<article>
+						<a href = "#">
+						<div class = "photo"></div>
+						<div class = "text"><p>Test 6</p></div>
+					</a>
+					</article>
+
+					</div>
 
 
 			<h2>...or start <mark class = "underline">exploring!</mark></h2>

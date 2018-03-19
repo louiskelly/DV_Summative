@@ -5,6 +5,7 @@ body {
 }
 
 h2 {
+  margin-top: 20px;
   font-size: 75px;
   font-weight: black;
 }
@@ -24,7 +25,7 @@ header {
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   font-size: 24px;
   text-decoration: none;
@@ -36,8 +37,9 @@ header {
   list-style: none;
 }
 
-.headB a {
+.headB button {
   display: block;
+  position: relative;
   margin-right: 10px;
   padding: 0;
   border: none;
@@ -45,12 +47,12 @@ header {
   background: none;
   text-decoration: none;
   font-size: 28px;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
-.headB a:hover {
-  color: #ffdd00;
+.headB button:hover {
+  color: #FFDD00;
   transition: 0.5s ease;
 }
 
@@ -67,7 +69,7 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("../img/header.jpg");
   background-position: center;
   background-size: cover;
-  color: white;
+  color: #fff;
   text-shadow: 1px 2px 3px black;
   text-align: center;
 }
@@ -75,7 +77,7 @@ header {
 .conA h1 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #ffdd00;
+  color: #FFDD00;
   font-size: 15vw;
 }
 
@@ -94,20 +96,20 @@ header {
   border-radius: 50%;
   text-align: center;
   background: none;
-  color: white;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
 .conA a:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
 
 .conB {
-  height: 70vh;
-  background-color: #ffdd00;
+  height: 80vh;
+  background-color: #FFDD00;
 }
 
 .conB .container {
@@ -141,7 +143,7 @@ header {
 }
 
 .conC h2 {
-  color: #ffdd00;
+  color: #FFDD00;
 }
 
 .slider img {
@@ -151,14 +153,14 @@ header {
 }
 
 .slider .slick-dots li button:before {
-  color: #ffdd00;
+  color: #FFDD00;
 }
 
 .conC .text {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   text-align: center;
-  border-top: 3px solid #ffdd00;
+  border-top: 3px solid #FFDD00;
   color: white;
   font-size: 20px;
   position: relative;
@@ -167,13 +169,19 @@ header {
 
 .conD {
   height: auto;
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 
 .conD .container {
   padding-top: 30px;
   padding-bottom: 20px;
   text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iconcontainer {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -188,34 +196,60 @@ header {
   border-radius: 50%;
   text-align: center;
   background-color: #444444;
-  color: white;
+  color: #ddd;
   text-decoration: none;
 }
 
 .conD .icon:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
 
-.conD .info {
-  line-height: 1.8;
-  height: auto;
-  margin: 20px;
+.conD .icon:focus {
+  color: white;
 }
 
-.recommendation {
-  padding-top: 20px;
-  height: 500px;
-  width: 100%;
+article {
   background-color: white;
-  box-shadow: 1px 2px 5px #999999;
-  border-radius: 2px;
+  flex: 1 1 384px;
+  display: flex;
+}
+
+article h2 {
+  font-size: 18px;
+}
+
+article a {
+  flex: 1;
+  display: flex;
+  margin: 10px;
+  border: solid 1px #ddd;
+  box-shadow: 1px 2px #ddd;
+  text-decoration: none;
+}
+
+article a:hover {
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+article .photo {
+  flex: 2;
+  min-height: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+article .text {
+  text-align: left;
+  margin: 10px;
+  flex: 3;
 }
 
 .conD .viewmap {
   background-color: #444444;
-  color: #ffdd00;
+  color: #FFDD00;
   padding: 5px 5px;
   border: none;
   border-radius: 3px;
@@ -228,7 +262,7 @@ header {
 }
 
 .conD .viewmap:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
@@ -236,28 +270,12 @@ header {
 .conD .underline {
   background: none;
   text-decoration: underline;
-  text-decoration-color: #ffdd00;
-}
-
-.conD .iconcontainer {
-  display: flex;
-}
-
-.conD .text {
-  border: solid 1px #dddddd;
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-}
-
-.conD .text h3 {
-  margin: 0;
-  font-size: 14px;
+  text-decoration-color: #FFDD00;
 }
 
 footer {
   position: relative;
-  border-top: 10px solid #ffdd00;
+  border-top: 10px solid #FFDD00;
   height: 100px;
   width: 100%;
   background-color: #444444;
@@ -334,7 +352,7 @@ footer p {
   border-radius: 50%;
   text-align: center;
   background-color: #444444;
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -390,7 +408,7 @@ footer p {
 
 .card__side--back {
   transform: rotateY(180deg);
-  background-color: white;
+  background-color: #fff;
   width: 100%;
   height: 620px;
 }
@@ -399,30 +417,24 @@ footer p {
   0% {
     transform: rotateY(0);
   }
-
   70% {
     transform: rotateY(200deg);
   }
-
   100% {
     transform: rotateY(180deg);
   }
 }
-
 @keyframes rotate-inverse {
   0% {
     transform: rotateY(180deg);
   }
-
   70% {
     transform: rotateY(-20deg);
   }
-
   100% {
     transform: rotateY(0);
   }
 }
-
 span.stars, span.stars span {
   display: block;
   background: url(../img/stars.png) 0 -16px repeat-x;
@@ -433,3 +445,5 @@ span.stars, span.stars span {
 span.stars span {
   background-position: 0 0;
 }
+
+/*# sourceMappingURL=styles.css.map */

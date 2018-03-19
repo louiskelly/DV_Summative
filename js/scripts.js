@@ -1,12 +1,25 @@
 /*jshint esversion: 6 */
 
-//HOME PAGE JS (Lisa)
+
+//lisa code 
+
+//HOME PAGE JS 
 $("#scrollbutton").click(function() {
     $('html,body').animate({
         scrollTop: $(".conB").offset().top},
         'slow');
 });
 
+//TAB FUNCTION
+
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    document.getElementById(tabName).style.display = "block";  
+}
 
 //slick slider for conC
 
@@ -21,10 +34,35 @@ $('.slider').slick({
   autoplaySpeed: 4000,
 });
 
+$("#mapbutton").click(function(){
+    $("#map-modal").modal({
+       fadeDuration: 200,
+       width: 4000
+    });
+});
+
+//when an article is clicked, show details on map modal
+$("article").click(function(){
+    $("#map-modal").modal({
+       fadeDuration: 200,
+       width: 4000
+    });
+
+map.setZoom(15);
+map.setCenter(marker2.getPosition());
+
+
+});
+
+
+
+
 //Louis Code
-$("#map-modal").modal({
-   fadeDuration: 200,
-   width: 4000
+$(".viewmap").click(function(){
+    $("#map-modal").modal({
+       fadeDuration: 200,
+       width: 4000
+    });
 });
 
 //MAP
@@ -38,9 +76,17 @@ var arrayAll = ['restaurant','lodging','point_of_interest'];
 var arrayRestaurant = ['restaurant'];
 var arrayLodging = ['lodging'];
 var arrayInterest = ['point_of_interest'];
+var marker2;
 
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
+  var myLatLng = {lat: -25.363, lng: 131.044};
+
+  marker2 = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: wellington,
