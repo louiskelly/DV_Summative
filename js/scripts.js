@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
-
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
 
 //lisa code 
 
@@ -66,13 +68,17 @@ $(".viewmap").click(function(){
 });
 
 //MAP
+var latlngCurrent = {
+      lat: -41.27897451,
+      lng: 174.77970593
+    };
+
 if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            latlngCurrent = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            console.log(pos);
           });
         }
 
@@ -86,6 +92,8 @@ var arrayRestaurant = ['restaurant'];
 var arrayLodging = ['lodging'];
 var arrayInterest = ['point_of_interest'];
 var marker2;
+
+var canMarkerFlip = true;
 
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
@@ -185,7 +193,7 @@ function initMap() {
   var request = {
     location: wellington,
     radius: '2000',
-    type: ['restaurant','lodging','point_of_interest']
+    type: ['photos','restaurant','lodging','point_of_interest']
   };
 
   service = new google.maps.places.PlacesService(map);
@@ -246,7 +254,6 @@ function createMarker(place) {
     var detailmake = service.getDetails({placeId: place.place_id}, function(place2, status){
     var details = {};
     var hasWebsite;
-      console.log(status);
       if (place2 && place2.website){
         details = {
           website_link : place2.website
@@ -265,19 +272,15 @@ function createMarker(place) {
         backAddress: place.vicinity,
         SideTester: place,
         category: place.types,
-        backImage: place.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 400}),
         website: details.website_link,
-        latlng: place.geometry.location
+        lat: place.geometry.viewport.b.b,
+        lng: place.geometry.viewport.f.b
     });
-
-    console.log(marker.backImage);
 
     gmarkers.push(marker);
 
   google.maps.event.addListener(marker, 'click', function() {
-    console.log($(this)[0]);
-    console.log($(this)[0].category);
-    $('#back_img').attr('src','http://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+ $(this).backImage +'&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
+    $('#back_img').attr('src','https://maps.googleapis.com/maps/api/streetview?size=600x300&location='+$(this)[0].lng+','+$(this)[0].lat+'&heading=100&pitch=28&scale=2&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
     $('#back_title').text($(this)[0].backTitle);
     //Gather Rating number, converts to stars
     $('#back_rating').text($(this)[0].backRating);
@@ -292,17 +295,13 @@ function createMarker(place) {
     }
 
     //
-    var latlngtest = {
-      lat: -41.27897451,
-      lng: 174.77970593
-    };
 
-    var request = {
-        origin: latlngtest,
-        destination: $(this)[0].latlng,
+    var requestCurrentLoc = {
+        origin: latlngCurrent,
+        destination: $(this)[0].position,
         travelMode: google.maps.TravelMode.WALKING
 };
-        directionsService.route(request, function (response, status) {
+        directionsService.route(requestCurrentLoc, function (response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
             directionsDisplay.setOptions({
@@ -314,8 +313,10 @@ function createMarker(place) {
     });
     //
 
-
-    flipCard();
+    if (canMarkerFlip == true) {
+        flipCard();
+        canMarkerFlip = false;
+    }
   });
   });
 }
@@ -328,7 +329,11 @@ var cardTransitionTime = 500;
 var $card = $('.js-card');
 var switching = false;
 
-$('#testBtn').click(flipCard);
+$('.backbtn').click(function(){
+  flipCard();
+  canMarkerFlip = true;
+  map.setZoom(15);
+});
 
 function flipCard () {
    if (switching) {
