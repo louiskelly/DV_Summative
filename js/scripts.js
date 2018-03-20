@@ -44,17 +44,7 @@ $("#mapbutton").click(function(){
 });
 
 //when an article is clicked, show details on map modal
-$("article").click(function(){
-    $("#map-modal").modal({
-       fadeDuration: 200,
-       width: 4000
-    });
 
-map.setZoom(15);
-map.setCenter(marker2.getPosition());
-
-
-});
 
 
 
@@ -91,19 +81,12 @@ var arrayAll = ['restaurant','lodging','point_of_interest'];
 var arrayRestaurant = ['restaurant'];
 var arrayLodging = ['lodging'];
 var arrayInterest = ['point_of_interest'];
-var marker2;
+
 
 var canMarkerFlip = true;
 
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
-  var myLatLng = {lat: -25.363, lng: 131.044};
-
-  marker2 = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: wellington,
@@ -202,6 +185,61 @@ function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
   directionsDisplay.setMap(map);
+  
+  /////////////// CODE BY LISA - RECOMMENDATION
+
+  function reccomendedMarker(placeID){
+  service.getDetails({
+    placeId: placeID
+  }, function(result, status) {
+    if (status != google.maps.places.PlacesServiceStatus.OK) {
+      alert(status);
+      return;
+    }
+    var markernew = new google.maps.Marker({
+      map: map,
+      // icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+      position: result.geometry.location
+    });
+  });
+}
+    function articleClick(lat2,lng2,placeID){
+      $("#map-modal").modal({
+       fadeDuration: 200,
+       width: 4000
+    });
+      reccomendedMarker(placeID);
+      map.setCenter({
+        lat: lat2,
+        lng: lng2
+      }); // setCenter takes a LatLng object
+      map.setZoom(20);
+    }
+
+//ACCOMMODATION
+  $("#article1").click(function(){articleClick(-41.2808, 174.7790, "ChIJHyHsgCyuOG0RkzSiShRxHdg");});
+  $("#article2").click(function(){articleClick(-41.2859, 174.7748, "ChIJ1_rEkNWvOG0RykVBybnn1hE");});
+  $("#article3").click(function(){articleClick(-41.2867, 174.7729, "ChIJO16jDSqwOG0Rj65KgiwCGtg");});
+  $("#article4").click(function(){articleClick(-41.2890, 174.7736, "ChIJ-ebcGNavOG0RcXskAngXPvY");});
+  $("#article5").click(function(){articleClick(-41.2951, 174.7837 , "ChIJXbQIzdqvOG0RST42CSGkFzg");});
+  $("#article6").click(function(){articleClick(-41.2896, 174.7771 , "ChIJUdQY79avOG0RrSc5-_4xdLY");});
+//HOT SPOTS
+  $("#article7").click(function(){articleClick(-41.2901, 174.7536, "ChIJmfs6nEKwOG0REKydJGLvAA8");});
+  $("#article8").click(function(){articleClick(-41.3064, 174.8243, "ChIJuTBolXKvOG0RRyTJ00rgcXw");});
+  $("#article9").click(function(){articleClick(-41.2851, 174.7781, "ChIJLyoZhNSvOG0R579NxQyM2YQ");});
+  $("#article10").click(function(){articleClick(-41.2840, 174.7751, "ChIJldjIatWvOG0RUFmFbdJlLcw");});
+  $("#article11").click(function(){articleClick(-41.3195, 174.7846, "ChIJSW__XPevOG0ROIAi_R-aY8E");});
+  $("#article12").click(function(){articleClick(-41.2996, 174.7769, "ChIJG64B7N6vOG0RFSwMzNvuZrk");});
+//RESTAURANTS
+  $("#article13").click(function(){articleClick(-41.2246, 174.8759, "ChIJ4awdp5WrOG0RhwqFpvRKHrw");});
+  $("#article14").click(function(){articleClick(-41.2901, 174.7859, "ChIJi2ZKKsivOG0RNc0_wCpSkdY");});
+  $("#article15").click(function(){articleClick(-41.2844, 174.7790, "ChIJ1-ncZdOvOG0RMGb7aKZQCWM");});
+  $("#article16").click(function(){articleClick(-41.2929, 174.7827, "ChIJjVJEDNCvOG0R3NHWJYKqcLU");});
+  $("#article17").click(function(){articleClick(-41.2852, 174.7776, "ChIJ2xCtjdSvOG0R7EjE5B2gx9g");});
+  $("#article18").click(function(){articleClick(-41.2810, 174.7785, "ChIJpxuCgSyuOG0RQe8f4QId_R0");});
+
+/////////////// CODE BY LISA - RECOMMENDATION END
+
   // service.getDetails({placeId: placeidVar}, function(place) {console.log(place);
   // });
 
@@ -246,6 +284,7 @@ function callback(results, status) {
       var place = results[i];
       // console.log(results[i]);
       createMarker(results[i]);
+      // console.log(results[i]);
     }
   }
 }

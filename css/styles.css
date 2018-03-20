@@ -32,6 +32,8 @@ header {
 }
 
 .headB ul {
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -54,6 +56,11 @@ header {
 .headB button:hover {
   color: #FFDD00;
   transition: 0.5s ease;
+}
+
+.headB p {
+  font-size: 14px;
+  color: white;
 }
 
 .head-fixed {
@@ -89,7 +96,7 @@ header {
 
 .conA a {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 40px;
   width: 2em;
   line-height: 2em;
@@ -108,11 +115,15 @@ header {
 }
 
 .conB {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 80vh;
   background-color: #FFDD00;
 }
 
 .conB .container {
+  align-items: center;
   padding-top: 30px;
   padding-bottom: 20px;
   text-align: center;
@@ -137,7 +148,7 @@ header {
   padding-top: 30px;
   padding-bottom: 20px;
   text-align: center;
-  max-width: 1200px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -200,6 +211,7 @@ header {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .conD .icon:hover {
@@ -312,6 +324,15 @@ footer p {
 
   .headB ul {
     display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .headB ul {
+    display: none;
+  }
+
+  .conB {
+    height: auto;
   }
 }
 #google_translate_element {
@@ -483,6 +504,31 @@ span.stars, span.stars span {
 
 span.stars span {
   background-position: 0 0;
+}
+
+.backbtn {
+  display: inline-block;
+  font-size: 14px;
+  width: 2em;
+  line-height: 2em;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #444444;
+  color: #ddd;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.backbtn:hover {
+  background-color: #FFDD00;
+  color: #444444;
+  transition: 0.5s ease;
+}
+
+.card__side--back .iconcontainer p {
+  color: #444444;
 }
 
 /*# sourceMappingURL=styles.css.map */
