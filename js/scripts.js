@@ -93,6 +93,8 @@ var arrayLodging = ['lodging'];
 var arrayInterest = ['point_of_interest'];
 var marker2;
 
+var canMarkerFlip = true;
+
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
   var myLatLng = {lat: -25.363, lng: 131.044};
@@ -311,8 +313,10 @@ function createMarker(place) {
     });
     //
 
-
-    flipCard();
+    if (canMarkerFlip == true) {
+        flipCard();
+        canMarkerFlip = false;
+    }
   });
   });
 }
@@ -325,7 +329,11 @@ var cardTransitionTime = 500;
 var $card = $('.js-card');
 var switching = false;
 
-$('#testBtn').click(flipCard);
+$('.backbtn').click(function(){
+  flipCard();
+  canMarkerFlip = true;
+  map.setZoom(15);
+});
 
 function flipCard () {
    if (switching) {
