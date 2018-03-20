@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
-
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
 
 //lisa code 
 
@@ -72,8 +74,8 @@ if (navigator.geolocation) {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            console.log(pos)
-          })
+            console.log(pos);
+          });
         }
 
 var map;
@@ -185,7 +187,7 @@ function initMap() {
   var request = {
     location: wellington,
     radius: '2000',
-    type: ['restaurant','lodging','point_of_interest']
+    type: ['photos,restaurant','lodging','point_of_interest']
   };
 
   service = new google.maps.places.PlacesService(map);
@@ -265,7 +267,7 @@ function createMarker(place) {
         backAddress: place.vicinity,
         SideTester: place,
         category: place.types,
-        backImage: place.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 400}),
+        backImage: place.photos[0].getUrl({maxWidth: 400, maxHeight: 400}),
         website: details.website_link,
         latlng: place.geometry.location
     });
