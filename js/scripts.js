@@ -66,6 +66,15 @@ $(".viewmap").click(function(){
 });
 
 //MAP
+if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            console.log(pos)
+          })
+        }
 
 var map;
 var service;
@@ -181,6 +190,10 @@ function initMap() {
 
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
+
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
   // service.getDetails({placeId: placeidVar}, function(place) {console.log(place);
   // });
 
@@ -230,12 +243,18 @@ function callback(results, status) {
 }
 
 function createMarker(place) {
-    var detailmake = service.getDetails({placeId: place.place_id}, function(place2){
-      console.log(place2);
-      // var details = {
-      //   detail_description: place2.description;
-      // }
-    });
+    var detailmake = service.getDetails({placeId: place.place_id}, function(place2, status){
+    var details = {};
+    var hasWebsite;
+      console.log(status);
+      if (place2 && place2.website){
+        details = {
+          website_link : place2.website
+        };
+      hasWebsite = true; 
+      } else {
+      hasWebsite = false; 
+      }
 
     var marker = new google.maps.Marker({
         position: place.geometry.location,
@@ -246,22 +265,58 @@ function createMarker(place) {
         backAddress: place.vicinity,
         SideTester: place,
         category: place.types,
-        backImage: place.photos.reference
+        backImage: place.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 400}),
+        website: details.website_link,
+        latlng: place.geometry.location
     });
+
+    console.log(marker.backImage);
 
     gmarkers.push(marker);
 
   google.maps.event.addListener(marker, 'click', function() {
     console.log($(this)[0]);
     console.log($(this)[0].category);
-    $('#back_img').attr('src','https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+ $(this).backImage +'&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
+    $('#back_img').attr('src','http://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+ $(this).backImage +'&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
     $('#back_title').text($(this)[0].backTitle);
     //Gather Rating number, converts to stars
     $('#back_rating').text($(this)[0].backRating);
     $('span.stars').stars();
     //
     $('#back_address').text($(this)[0].backAddress);
+    if (hasWebsite == true){
+    $('#back_website').attr('href', ($(this)[0].website));
+    $('.back-website-style').show();
+    } else {
+      $('.back-website-style').hide();
+    }
+
+    //
+    var latlngtest = {
+      lat: -41.27897451,
+      lng: 174.77970593
+    };
+
+    var request = {
+        origin: latlngtest,
+        destination: $(this)[0].latlng,
+        travelMode: google.maps.TravelMode.WALKING
+};
+        directionsService.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            directionsDisplay.setOptions({
+                suppressMarkers: true
+            });
+        } else {
+            console.log("directionsService : " + status);
+        }
+    });
+    //
+
+
     flipCard();
+  });
   });
 }
 
