@@ -25,7 +25,7 @@ header {
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   font-size: 24px;
   text-decoration: none;
@@ -47,12 +47,12 @@ header {
   background: none;
   text-decoration: none;
   font-size: 28px;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
 .headB button:hover {
-  color: #ffdd00;
+  color: #FFDD00;
   transition: 0.5s ease;
 }
 
@@ -69,7 +69,7 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("../img/header.jpg");
   background-position: center;
   background-size: cover;
-  color: white;
+  color: #fff;
   text-shadow: 1px 2px 3px black;
   text-align: center;
 }
@@ -77,7 +77,7 @@ header {
 .conA h1 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #ffdd00;
+  color: #FFDD00;
   font-size: 15vw;
 }
 
@@ -96,20 +96,20 @@ header {
   border-radius: 50%;
   text-align: center;
   background: none;
-  color: white;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
 .conA a:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
 
 .conB {
   height: 80vh;
-  background-color: #ffdd00;
+  background-color: #FFDD00;
 }
 
 .conB .container {
@@ -143,7 +143,7 @@ header {
 }
 
 .conC h2 {
-  color: #ffdd00;
+  color: #FFDD00;
 }
 
 .slider img {
@@ -153,14 +153,14 @@ header {
 }
 
 .slider .slick-dots li button:before {
-  color: #ffdd00;
+  color: #FFDD00;
 }
 
 .conC .text {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   text-align: center;
-  border-top: 3px solid #ffdd00;
+  border-top: 3px solid #FFDD00;
   color: white;
   font-size: 20px;
   position: relative;
@@ -169,7 +169,7 @@ header {
 
 .conD {
   height: auto;
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 
 .conD .container {
@@ -196,14 +196,14 @@ header {
   border-radius: 50%;
   text-align: center;
   background-color: #444444;
-  color: #dddddd;
+  color: #ddd;
   text-decoration: none;
   border: none;
   cursor: pointer;
 }
 
 .conD .icon:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
@@ -226,8 +226,8 @@ article a {
   flex: 1;
   display: flex;
   margin: 10px;
-  border: solid 1px #dddddd;
-  box-shadow: 1px 2px #dddddd;
+  border: solid 1px #ddd;
+  box-shadow: 1px 2px #ddd;
   text-decoration: none;
 }
 
@@ -251,7 +251,7 @@ article .text {
 
 .conD .viewmap {
   background-color: #444444;
-  color: #ffdd00;
+  color: #FFDD00;
   padding: 5px 5px;
   border: none;
   border-radius: 3px;
@@ -264,7 +264,7 @@ article .text {
 }
 
 .conD .viewmap:hover {
-  background-color: #ffdd00;
+  background-color: #FFDD00;
   color: #444444;
   transition: 0.5s ease;
 }
@@ -272,12 +272,12 @@ article .text {
 .conD .underline {
   background: none;
   text-decoration: underline;
-  text-decoration-color: #ffdd00;
+  text-decoration-color: #FFDD00;
 }
 
 footer {
   position: relative;
-  border-top: 10px solid #ffdd00;
+  border-top: 10px solid #FFDD00;
   height: 100px;
   width: 100%;
   background-color: #444444;
@@ -447,7 +447,7 @@ footer p {
 
 .card__side--back {
   transform: rotateY(180deg);
-  background-color: white;
+  background-color: #fff;
   width: 100%;
   height: 500px;
 }
@@ -456,30 +456,24 @@ footer p {
   0% {
     transform: rotateY(0);
   }
-
   70% {
     transform: rotateY(200deg);
   }
-
   100% {
     transform: rotateY(180deg);
   }
 }
-
 @keyframes rotate-inverse {
   0% {
     transform: rotateY(180deg);
   }
-
   70% {
     transform: rotateY(-20deg);
   }
-
   100% {
     transform: rotateY(0);
   }
 }
-
 span.stars, span.stars span {
   display: block;
   background: url(../img/stars.png) 0 -16px repeat-x;
@@ -490,3 +484,5 @@ span.stars, span.stars span {
 span.stars span {
   background-position: 0 0;
 }
+
+/*# sourceMappingURL=styles.css.map */
