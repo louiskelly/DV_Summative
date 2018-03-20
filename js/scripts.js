@@ -72,8 +72,8 @@ if (navigator.geolocation) {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            console.log(pos)
-          })
+            console.log(pos);
+          });
         }
 
 var map;

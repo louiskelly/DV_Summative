@@ -4,6 +4,8 @@ $darkcolor: #444444;
 $lightcolor: #fff;
 $greycolor: #ddd;
 $maxwidth: 1200px;
+$cardheight: 500px;
+$card-transition-time: 0.5s;
 
 
 //GENERAL CSS 
@@ -27,7 +29,7 @@ header {
 	position:absolute;
 	top:0;
 	left:0;
-	z-index:100;
+	z-index:1;
 	width:100%;
 	background-color: rgba(0,0,0,0.2);
 	box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
@@ -228,6 +230,8 @@ header {
 	background-color: $darkcolor;
 	color: $greycolor;
 	text-decoration: none;
+	border:none;
+	cursor:pointer;
 }
 
 .conD .icon:hover {
@@ -355,6 +359,10 @@ footer p{
 
 }
 
+////END OF MEDIA QUERIES ////////
+
+
+
 //Louis SCSS
 
 #map-modal{
@@ -375,11 +383,22 @@ footer p{
 	position: absolute;
 	top: 5%;
 	left: 40px;
-	height: 90%;
+	height: $cardheight;
 	width: 260px;
 	z-index: 999;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	overflow: hidden;
+	// overflow-y: scroll;
+	// overflow-x: hidden;
+}
+
+#sidebar .cardtitle {
+	margin:0;
+	margin-bottom: 25px;
+	padding:20px;
+	font-size: 28px;
+	color:$maincolor;
+	text-align: center;
+	text-shadow: 1px 2px 3px black;
 }
 
 .nomarpad{
@@ -391,15 +410,40 @@ footer p{
 #sidebar .icon{
 	display:inline-block;
     margin-bottom: 20px;
-    font-size:24px;
+    font-size:28px;
     width:2em;
     line-height:2em;
     border-radius: 50%;
     text-align:center;
-    background-color: $darkcolor;
+    background-color: none;
     color: $lightcolor;
+    border: solid 1px $greycolor;
     text-decoration: none;
+    cursor:pointer;
+    margin-top:10px;
+
 }
+
+#sidebar .iconcontainer{
+	display:flex;
+	align-items:center;
+	padding:10px;
+	color: $lightcolor;
+	padding-bottom:10px;
+	margin-left:10px;
+}
+
+#sidebar .icon:hover{
+	background-color: $maincolor;
+	color: $darkcolor;
+	transition: 0.5s ease;
+}
+
+#sidebar .iconcontainer p{
+	margin-left: 15px;
+	text-align: left;
+}
+
 
 .back-image-style{
 	width: 245px;
@@ -424,8 +468,7 @@ footer p{
 	margin: 0px;
 }
 /*FlIP CODE -Louis*/
-$cardheight: 620px;
-$card-transition-time: 0.5s;
+
 .card {
    perspective: 600px;
    position: relative;
@@ -440,6 +483,7 @@ $card-transition-time: 0.5s;
    .card__wrapper {
       transform-style: preserve-3d;
       animation: rotate-inverse $card-transition-time linear both;
+      height:600px;
    }
 
    .card__side {
