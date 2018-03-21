@@ -263,7 +263,7 @@ article .text {
 
 .conD .viewmap {
   background-color: #444444;
-  color: #FFDD00;
+  color: #ddd;
   padding: 5px 5px;
   border: none;
   border-radius: 3px;
@@ -290,18 +290,26 @@ article .text {
 footer {
   position: relative;
   border-top: 10px solid #FFDD00;
-  height: 100px;
+  height: auto;
   width: 100%;
   background-color: #444444;
 }
 
-footer p {
+footer .container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+footer p {
+  margin: 0;
+  padding-bottom: 20px;
   font-size: 12px;
   color: white;
-  text-align: center;
+}
+
+footer img {
+  width: 20%;
 }
 
 @media (min-width: 768px) {
@@ -333,6 +341,14 @@ footer p {
 
   .conB {
     height: auto;
+  }
+
+  .conB p {
+    padding: 10px;
+  }
+
+  footer img {
+    width: 40%;
   }
 }
 #google_translate_element {
@@ -378,7 +394,6 @@ footer p {
   padding: 0;
 }
 
-/*MAP ICONS -Louis*/
 #sidebar .icon {
   display: inline-block;
   margin-bottom: 20px;
@@ -416,29 +431,41 @@ footer p {
 }
 
 .back-image-style {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
   width: 245px;
   height: 180px;
 }
 
 .back-title-style {
   font-size: 28px;
+  padding-left: 10px;
   font-weight: bold;
   margin: 0px;
 }
 
 .back-rating-style {
   font-size: 20px;
-  font-weight: regular;
   margin: 0px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .back-address-style {
+  padding-left: 10px;
   font-size: 20px;
-  font-weight: regular;
-  margin: 0px;
+  line-height: 1.8;
 }
 
-/*FlIP CODE -Louis*/
+#backiconcontainer {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .card {
   perspective: 600px;
   position: relative;

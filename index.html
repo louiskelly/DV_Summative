@@ -4,12 +4,20 @@
 	<meta charset="UTF-8">
 	<title>Discover Wellington</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--CSS-->
+	<!--FONT AWESOME CSS-->
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick.css">
+	<!--SLICK SLIDER CSS-->	
+	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick.css">		
 	<link rel="stylesheet" href="../node_modules/slick-carousel/slick/slick-theme.css">
+	<!--GOOGLE FONT-->	
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,900" rel="stylesheet">
+	<!--JQUERY MODAL CSS-->		
 	<link rel="stylesheet" href="../node_modules/jquery-modal/jquery.modal.css">
+	<!--CUSTOM CSS-->	
 	<link rel="stylesheet" href="css/styles.min.css">
+<!--END OF CSS-->
+
 </head>
 <body>
 
@@ -39,7 +47,6 @@
 
 	<section class = "conA">
 		<div class = "container">
-<!-- <img src="img/logo-white.png"> -->
 			<h1>Discover Wellington</h1>
 			<p>Start your journey</p>
 			<!-- BUTTON -->
@@ -53,7 +60,7 @@
 	<section class = "conB">
 		<div class = "container">
 			<h2>Explore the great capital.</h2>
-			<p>Wellington is the capital of New Zealand, that is famous for its tucked-away bars, quirky cafes, award-winning restaurants and great coffee. It is a cosmopolitan city with an energetic personality. See for yourself what makes Wellington such a unique place!</p>
+			<p>Wellington is famous for its tucked-away bars, quirky cafes, award-winning restaurants and great coffee. It is a cosmopolitan city with an energetic personality. See for yourself what makes Wellington such a unique place!</p>
 		</div>
 	</section>
 
@@ -103,18 +110,15 @@
 
 				</div>
 
+			</div>
 
-
-
-
-				</div>
 
 		</div>
 	</section>
 
 	<!-- CONTAINER D(RECOMMENDATIONS) -->
 
-<section class = "conD">
+	<section class = "conD">
 
 		<div class = "container">
 			<h2>Plan your visit.</h2>
@@ -127,6 +131,7 @@
 				
 				</div>
 
+					<!-- ACCOMMODATION -->
 
 					<div id="Accommodation" class="tab">
 					<article id = "article1">
@@ -158,7 +163,6 @@
 						</div>
 					</a>
 					</article>
-
 
 					<article id = "article4">
 						<a href ="#">
@@ -192,10 +196,7 @@
 
 					</div>
 
-
-					<!-- CONTENT -->
-
-
+					<!-- HOTSPOT -->
 
 					<div id="hotspot" class="tab" style="display:none">
 					<article id = "article7">
@@ -261,6 +262,7 @@
 
 					</div>
 
+					<!-- RESTAURANT -->
 
 					<div id="restaurant" class="tab" style="display:none">
 					<article id = "article13">
@@ -293,7 +295,6 @@
 					</a>
 					</article>
 
-
 					<article id = "article16">
 						<a href ="#">
 						<div class = "photo" style = "background-image: url(img/img016.jpg);"></div>
@@ -309,7 +310,7 @@
 						<div class = "photo" style = "background-image: url(img/img017.jpg);"></div>
 						<div class = "text">
 						<h2>Charley Noble</h2>
-						<p>Huddart Parker Building 1 Post Office Square, Wellington, 6011</p>							
+						<p>Huddart Parker Building 1 Post Office Square, Wellington, 6011</p>
 						</div>
 						</a>
 					</article>
@@ -319,14 +320,15 @@
 						<div class = "photo" style = "background-image: url(img/img018.jpg);"></div>
 						<div class = "text">
 						<h2>Portlander Bar & Grill</h2>
-						<p> Corner Whitmore Street and Featherston Street, Wellington 6011</p>							
+						<p> Corner Whitmore Street and Featherston Street, Wellington 6011</p>		
 						</div>
-					</a>
+						</a>
 					</article>
 
 					</div>
 
-<br>
+			<br>
+			
 			<h2>...or start <mark class = "underline">exploring!</mark></h2>
 
 			<button class = "viewmap"><i class = "fa fa-map-marker"></i> View Map </button>	
@@ -334,23 +336,29 @@
 	</section>
 
 </main>	
+<!--END OF MAIN CONTENT-->
 
-<!-- FOOTER -->
-
+<!--START OF FOOTER -->
 <footer>
+	<div class = "container">
+	<img src = "img/logo-white.png">
 	<p>Created by Lisa Pearson and Louis Kelly 2018. For education purposes only.</p>
-
+</p>
+</div>
 </footer>
+<!--END OF FOOTER -->
 
-<!--MODAL MAP CONTAINER-->
-<!--Louis-->
+<!--END OF LISA'S CODE-->
+
+
+<!--START OF LOUIS' CODE-->
+	<!--MODAL MAP CONTAINER-->
 	<section class = "conModal">
 		<div id="map-modal" class = "container modal">
 			<div id="map"></div>
 			<div id="sidebar" class="card js-card">
 				<div class="card__wrapper">
 					<div class="card__side is-active">
-<!-- 						<input type="text" id="mapSearch"> -->
 
 		                <h2 class = "cardtitle">Welcome to Wellington</h2>
 						<div class = "iconcontainer"><a href = "#" class="mapBtn_Lodging fa fa-bed icon"></a><p>Accommodation</p></div>
@@ -361,10 +369,10 @@
 					<div class="card__side card__side--back">
 						<img class="nomarpad back-image-style" id="back_img" src="#">
 						<p class="nomarpad back-title-style"><span id="back_title">1</span></p>
-						<span class="stars" id="back_rating">2</span>
+						<span class="stars back-rating-style" id="back_rating">2</span>
 						<p class="nomarpad back-address-style"> Address: <span id="back_address">3</span></p>
 						<p class="nomarpad back-website-style"> Website: <a id="back_website" href="">Link</span></p>
-						<div class = "iconcontainer"><a href = "#" class="backbtn fa fa-backward"></a><p>Go Back</p></div>
+						<div class = "iconcontainer" id = "backiconcontainer"><a href = "#" class="backbtn fa fa-angle-double-left"></a><p>Go Back</p></div>
 						</div>
 
 					</div>
@@ -372,12 +380,22 @@
 			</div>
 		</div>
 	</section>
-<!--END OF MODAL CONTAINER-->
+<!-- END OF MODAL CONTAINER -->
+<!-- END OF LOUIS' CODE -->
+
+<!--SCRIPTS-->
+	<!--JQUERY CDN SCRIPT-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!--JQUERY MODAL SCRIPT-->
 <script type="text/javascript" src="../node_modules/jquery-modal/jquery.modal.js"></script>
+	<!--GOOGLE MAP API SCRIPT-->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU&libraries=places&callback=initMap"></script>
+	<!--SLICK SLIDER SCRIPT-->
 <script src= "../node_modules/slick-carousel/slick/slick.min.js"></script>
+	<!--CUSTOM JS-->
 <script type="text/javascript" src="../js/scripts.js"></script>
+	<!--GOOGLE TRANSLATE API SCRIPT-->
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--END OF SCRIPTS-->
 </body>
 </html>

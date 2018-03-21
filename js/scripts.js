@@ -1,19 +1,18 @@
 /*jshint esversion: 6 */
+
+//Google Translate Init -Louis
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 
-//lisa code 
-
-//HOME PAGE JS 
+//HOME PAGE JS  -Lisa
 $("#scrollbutton").click(function() {
     $('html,body').animate({
         scrollTop: $(".conB").offset().top},
         'slow');
 });
 
-//TAB FUNCTION
-
+//TAB FUNCTION -Lisa
 function openTab(tabName) {
     var i;
     var x = document.getElementsByClassName("tab");
@@ -23,8 +22,7 @@ function openTab(tabName) {
     document.getElementById(tabName).style.display = "block";  
 }
 
-//slick slider for conC
-
+//slick slider for conC -Lisa
 $('.slider').slick({
   dots: true,
   infinite: true,
@@ -36,6 +34,7 @@ $('.slider').slick({
   autoplaySpeed: 4000,
 });
 
+//Map Buttons -Louis / Lisa
 $("#mapbutton").click(function(){
     $("#map-modal").modal({
        fadeDuration: 200,
@@ -43,13 +42,6 @@ $("#mapbutton").click(function(){
     });
 });
 
-//when an article is clicked, show details on map modal
-
-
-
-
-
-//Louis Code
 $(".viewmap").click(function(){
     $("#map-modal").modal({
        fadeDuration: 200,
@@ -57,12 +49,13 @@ $(".viewmap").click(function(){
     });
 });
 
-//MAP
+//MAP -Louis
 var latlngCurrent = {
       lat: -41.27897451,
       lng: 174.77970593
     };
 
+//Geolocation -Louis
 if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             latlngCurrent = {
@@ -75,16 +68,14 @@ if (navigator.geolocation) {
 var map;
 var service;
 var infowindow;
-
 var gmarkers = [];
 var arrayAll = ['restaurant','lodging','point_of_interest'];
 var arrayRestaurant = ['restaurant'];
 var arrayLodging = ['lodging'];
 var arrayInterest = ['point_of_interest'];
-
-
 var canMarkerFlip = true;
 
+//MAP INITIALIZE -Louis
 function initMap() {
   var wellington = new google.maps.LatLng(-41.2865,174.7762);
 
@@ -92,6 +83,7 @@ function initMap() {
       center: wellington,
       zoom: 15,
        styles: [
+//MAP STYLING -Lisa
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
@@ -173,21 +165,21 @@ function initMap() {
           ]
     });
 
+//NEARBY SEARCH -Louis
   var request = {
     location: wellington,
     radius: '2000',
     type: ['photos','restaurant','lodging','point_of_interest']
   };
 
+//MAP API`S -Louis
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
-
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
   directionsDisplay.setMap(map);
   
-  /////////////// CODE BY LISA - RECOMMENDATION
-
+//RECCOMENDATION DETAIL SEARCH -Louis / Lisa
   function reccomendedMarker(placeID){
   service.getDetails({
     placeId: placeID
@@ -198,11 +190,11 @@ function initMap() {
     }
     var markernew = new google.maps.Marker({
       map: map,
-      // icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
       position: result.geometry.location
     });
   });
 }
+//ARTICLE CLICK EVENT -Louis
     function articleClick(lat2,lng2,placeID){
       $("#map-modal").modal({
        fadeDuration: 200,
@@ -212,10 +204,10 @@ function initMap() {
       map.setCenter({
         lat: lat2,
         lng: lng2
-      }); // setCenter takes a LatLng object
+      });
       map.setZoom(20);
     }
-
+//ARTICLE CLICK EVENT ARGUEMENTS -Lisa
 //ACCOMMODATION
   $("#article1").click(function(){articleClick(-41.2808, 174.7790, "ChIJHyHsgCyuOG0RkzSiShRxHdg");});
   $("#article2").click(function(){articleClick(-41.2859, 174.7748, "ChIJ1_rEkNWvOG0RykVBybnn1hE");});
@@ -238,11 +230,7 @@ function initMap() {
   $("#article17").click(function(){articleClick(-41.2852, 174.7776, "ChIJ2xCtjdSvOG0R7EjE5B2gx9g");});
   $("#article18").click(function(){articleClick(-41.2810, 174.7785, "ChIJpxuCgSyuOG0RQe8f4QId_R0");});
 
-/////////////// CODE BY LISA - RECOMMENDATION END
-
-  // service.getDetails({placeId: placeidVar}, function(place) {console.log(place);
-  // });
-
+//MARKER FILTERING -Louis
   function setMapOnAll(map) {
         for (var i = 0; i < gmarkers.length; i++) {
           gmarkers[i].setMap(map);
@@ -255,13 +243,12 @@ function initMap() {
         clearMarkers();
         gmarkers = [];
       }
-
-
     function filterMarkerType(){
     deleteMarkers();
     service.nearbySearch(request, callback);
   }
 
+//MARKER FILTERING TRIGGERS -Louis
   $('.mapBtn_Lodging').click(function(){
     request.type = arrayLodging;
     filterMarkerType();
@@ -277,18 +264,17 @@ function initMap() {
     filterMarkerType();
   });
 }
-
+//MARKER DATA GATHERING -Louis
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
-      // console.log(results[i]);
       createMarker(results[i]);
-      // console.log(results[i]);
     }
   }
 }
 
+//CREATE MARKER -Louis
 function createMarker(place) {
     var detailmake = service.getDetails({placeId: place.place_id}, function(place2, status){
     var details = {};
@@ -302,6 +288,7 @@ function createMarker(place) {
       hasWebsite = false; 
       }
 
+//MARKER OBJECT DEFINING VALUES -Louis
     var marker = new google.maps.Marker({
         position: place.geometry.location,
         map: map,
@@ -318,14 +305,17 @@ function createMarker(place) {
 
     gmarkers.push(marker);
 
+//MARKER CLICK EVENT, FILLS OUT SIDEBAR WITH MARKER OBJECT DETAILS -Louis
   google.maps.event.addListener(marker, 'click', function() {
+//GATHERS URL FROM STREETVIEW AND DYNAMICALLY PLACES IMAGE IN SIDEBAR -Louis  
     $('#back_img').attr('src','https://maps.googleapis.com/maps/api/streetview?size=600x300&location='+$(this)[0].lng+','+$(this)[0].lat+'&heading=100&pitch=28&scale=2&key=AIzaSyBzcNyeAQB2eOqCy57ZR8eTAEnq5UshQHU');
+//GATHERS OBJECT DATA AND PLACES IN SIDEBAR -Louis
     $('#back_title').text($(this)[0].backTitle);
-    //Gather Rating number, converts to stars
     $('#back_rating').text($(this)[0].backRating);
-    $('span.stars').stars();
-    //
     $('#back_address').text($(this)[0].backAddress);
+//TURNS NUMBER INTO STAR BASED RATING -Louis
+    $('span.stars').stars();
+//CHECKS IF MARKER CONTAINS WEBSITE THEN PLACES IT IN SIDEBAR IF TRUE -Louis
     if (hasWebsite == true){
     $('#back_website').attr('href', ($(this)[0].website));
     $('.back-website-style').show();
@@ -333,8 +323,7 @@ function createMarker(place) {
       $('.back-website-style').hide();
     }
 
-    //
-
+//GEOLOCATION DIRECTIONS GENERATOR -Louis
     var requestCurrentLoc = {
         origin: latlngCurrent,
         destination: $(this)[0].position,
@@ -350,8 +339,8 @@ function createMarker(place) {
             console.log("directionsService : " + status);
         }
     });
-    //
 
+//LIMITS MARKER TO ONLY FLIP WHEN NEEDED -Louis
     if (canMarkerFlip == true) {
         flipCard();
         canMarkerFlip = false;
@@ -361,8 +350,7 @@ function createMarker(place) {
 }
 
 
-//Flip Function
-
+//MARKER FLIP FUNCTION - Louis
 var cardTransitionTime = 500;
 
 var $card = $('.js-card');
@@ -387,7 +375,7 @@ function flipCard () {
    }, cardTransitionTime / 2);
 }
 
-//Star Function
+//STAR FUNCTION -Louis
 $.fn.stars = function() {
     return $(this).each(function() {
         // Get the value

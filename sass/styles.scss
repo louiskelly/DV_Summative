@@ -7,6 +7,7 @@ $maxwidth: 1200px;
 $cardheight: 500px;
 $card-transition-time: 0.5s;
 
+/////////////////////////////////LISA'S CODE /////////////////////////////////
 
 //GENERAL CSS 
 
@@ -23,7 +24,7 @@ h2{
 }
 
 
-//HEADER (NAVBAR) CSS 
+//HEADER (NAVBAR)
 
 header {
 	position:absolute;
@@ -83,7 +84,7 @@ header {
 }
 
 
-// CONTAINER A CSS 
+// CONTAINER A
 
 .conA{
 	display:flex;
@@ -133,7 +134,7 @@ header {
 }
 
 
-// CONTAINER B CSS 
+// CONTAINER B
 
 .conB{
 	display:flex;
@@ -161,7 +162,7 @@ header {
 	line-height:1.8;
 }
 
-// CONTAINER C CSS
+// CONTAINER C
 
 .conC {
 	height:auto;
@@ -226,9 +227,6 @@ header {
 		margin-left:auto;
 		margin-right:auto;
 }
-
-
-// CONTAINER D ICON CSS 
 
 .conD .icon {
 	display:inline-block;
@@ -296,7 +294,7 @@ article .text{
 
 .conD .viewmap {
 	background-color: $darkcolor;
-	color: $maincolor;
+	color: $greycolor;
 	padding: 5px 5px;
 	border:none;
 	border-radius: 3px;
@@ -321,30 +319,34 @@ article .text{
     text-decoration-color: $maincolor;
 }
 
+//FOOTER
 
 footer{
 	 position:relative;
 	border-top: 10px solid $maincolor;
-	height:100px;
+	height: auto;
 	width:100%;
 	background-color: $darkcolor;
 }
 
-footer p{
+footer .container {
 	max-width: $maxwidth;
 	margin-left: auto;
 	margin-right:auto;
-	font-size:12px;
-	color:white;
-	text-align: center;
 }
 
+footer p{
+	margin:0;
+	padding-bottom:20px;
+	font-size:12px;
+	color:white;
+}
 
-////////////////////////////////////////////////////MEDIA QUERIES ////////////////////////////////////////////
+footer img{
+	width:20%;
+}
 
-
-
-//WHEN IT IS LARGER THAN MOBILE 
+//MEDIA QUERIES
 
 @media (min-width: 768px){
 
@@ -371,6 +373,7 @@ footer p{
 
 }
 
+
 @media (max-width:767px){
 	.headB ul{
 		display:none;
@@ -379,13 +382,22 @@ footer p{
 	.conB {
 		height:auto;
 	}
+
+	.conB p{
+		padding:10px;
+	}
+
+	footer img{
+		width:40%;
+	}
 }
 
-////END OF MEDIA QUERIES ////////
+//END OF MEDIA QUERIES
+
+/////////////////////////////////END OF LISA'S CODE /////////////////////////////////
 
 
-
-//Louis SCSS
+/////////////////////////////////LOUIS' CODE /////////////////////////////////
 
 #google_translate_element{
 	margin-right: 40px;
@@ -405,6 +417,8 @@ footer p{
 	height: 100%;
 }
 
+//SIDEBAR (finalized by Lisa)
+
 #sidebar{
 	position: absolute;
 	top: 5%;
@@ -413,8 +427,6 @@ footer p{
 	width: 260px;
 	z-index: 999;
 	overflow: hidden;
-	// overflow-y: scroll;
-	// overflow-x: hidden;
 }
 
 #sidebar .cardtitle {
@@ -432,7 +444,8 @@ footer p{
 	padding: 0;
 }
 
-/*MAP ICONS -Louis*/
+//MAP ICONS (finalized by Lisa)
+
 #sidebar .icon{
 	display:inline-block;
     margin-bottom: 20px;
@@ -470,30 +483,45 @@ footer p{
 	text-align: left;
 }
 
+//BACK OF CARD (Finalized by Lisa)
 
 .back-image-style{
+	display: block;
+	margin: 0 auto;
+	padding:5px;
 	width: 245px;
 	height: 180px;
 }
 
 .back-title-style{
 	font-size: 28px;
+	padding-left:10px;
 	font-weight: bold;
 	margin: 0px;
 }
 
 .back-rating-style{
 	font-size: 20px;
-	font-weight: regular;
 	margin: 0px;
+	display:inline-block;
+	margin-left:10px;
 }
 
 .back-address-style{
+	padding-left:10px;
 	font-size: 20px;
-	font-weight: regular;
-	margin: 0px;
+	line-height: 1.8;
 }
-/*FlIP CODE -Louis*/
+
+#backiconcontainer{
+display:block;
+margin:0 auto;
+position:absolute;
+bottom:0;
+left:0;
+}
+
+//FLIP CARD CODE
 
 .card {
    perspective: 600px;
@@ -569,6 +597,7 @@ span.stars span {
     background-position: 0 0;
 }
 
+//BACK BUTTON (Finalized by Lisa)
 .backbtn {
 	display:inline-block;
 	font-size:14px;
@@ -594,3 +623,5 @@ span.stars span {
 .card__side--back .iconcontainer p{
 	color:$darkcolor;
 }
+
+/////////////////////////////////END OF LOUIS' CODE /////////////////////////////////
